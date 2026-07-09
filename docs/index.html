@@ -2,16 +2,32 @@
 <html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
-<title>隱私權政策 - BLIP</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLIP 隱私權政策</title>
 <style>
-body { font-family: system-ui, sans-serif; max-width: 700px; margin: 60px auto; padding: 0 20px; line-height: 1.8; color: #333; }
+* { box-sizing: border-box; }
+body { font-family: system-ui, -apple-system, sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; line-height: 1.8; color: #333; background: #fafafa; }
+.toggle { text-align: right; margin-bottom: 20px; }
+.toggle button { padding: 6px 16px; border: 1px solid #ccc; background: #fff; border-radius: 20px; cursor: pointer; font-size: 14px; }
+.toggle button:hover { background: #f0f0f0; }
 h1 { font-size: 1.5em; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-h2 { font-size: 1.1em; margin-top: 30px; }
+h2 { font-size: 1.1em; margin-top: 30px; color: #222; }
 p { margin: 10px 0; }
 .update { color: #888; font-size: 0.85em; }
+[lang="en"] { display: none; }
+html:lang(en) [lang="zh-TW"] { display: none; }
+html:lang(en) [lang="en"] { display: block; }
 </style>
 </head>
 <body>
+
+<div class="toggle">
+  <button onclick="setLang('zh-TW')">中文</button>
+  <button onclick="setLang('en')">EN</button>
+</div>
+
+<!-- Chinese -->
+<div lang="zh-TW">
 <h1>BLIP 隱私權政策</h1>
 <p class="update">最後更新：2026 年 7 月 6 日</p>
 
@@ -33,5 +49,41 @@ p { margin: 10px 0; }
 
 <h2>聯絡我們</h2>
 <p>如有任何隱私相關問題，請聯絡：blip.developer@gmail.com</p>
+</div>
+
+<!-- English -->
+<div lang="en">
+<h1>BLIP Privacy Policy</h1>
+<p class="update">Last updated: July 6, 2026</p>
+
+<h2>Data We Collect</h2>
+<p>This app (BLIP) does not collect, store, or transmit any personal data.</p>
+<p>This app uses your phone's hardware flashlight. No account registration required. No personal information needed.</p>
+
+<h2>Third-Party Services</h2>
+<p>This app contains no third-party advertisements or tracking scripts.</p>
+
+<h2>Permission Usage</h2>
+<p>Camera permission: Used to control the phone's flash LED (flashlight function). For local use only. No images are captured or transmitted.</p>
+
+<h2>Children's Privacy</h2>
+<p>This app is not intended for children under 13, and we do not knowingly collect personal data from children.</p>
+
+<h2>Policy Changes</h2>
+<p>If this policy changes, the updated version will be posted on this page.</p>
+
+<h2>Contact Us</h2>
+<p>If you have any privacy-related questions, contact: blip.developer@gmail.com</p>
+</div>
+
+<script>
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  localStorage.setItem('blip-lang', lang);
+}
+var saved = localStorage.getItem('blip-lang');
+if (saved) setLang(saved);
+</script>
+
 </body>
 </html>
